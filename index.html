@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+        body, h2, ul {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            background-image: url("https://cdn.pixabay.com/photo/2019/09/17/18/48/computer-4484282_1280.jpg");
+            background-size: cover;  /* Ensures image covers the full screen */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents repetition */
+    background-attachment: fixed;  /* Keeps the background fixed on scroll */
+
+        }
+
+        /* Navigation Bar */
+        header {
+            background: linear-gradient(50deg,#00b4d8, #1c3b6d);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: left;
+            align-items: last baseline;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Updated Logo / Name */
+        header h1 {
+            font-size: 20px; /* Increased Font Size */
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif; /* Custom Font */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navigation Menu */
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        /* Menu Links */
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Icons in the menu */
+        nav ul li a i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        /* Hover effect */
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Responsive Navigation (For mobile screens) */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: left;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Rounded Rectangular Button */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px; /* Fully rounded edges */
+            transition: all 0.3s ease-in-out;
+            border: 2px solid transparent;
+        }
+
+        /* Hover Effect */
+        .btn:hover {
+            background: #2980b9;
+            border-color: white;
+            transform: scale(1.05);
+        }
+
+        /* Welcome Section */
+        .welcome {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+       /* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.welcome h1 {
+    font-size: 40px; /* Slightly larger */
+    font-weight: 700;
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, letter-spacing 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.welcome h1:hover {
+    transform: scale(1.1);  /* Enlarges slightly on hover */
+    letter-spacing: 4px;  /* More spacing for effect */
+    color:#00b4d8; /* Vibrant orange */
+}
+
+
+        .welcome p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1>Dhanya Naik</h1>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <h1>Welcome to My Personal Portfolio</h1>
+       <p> Discover my skills, projects, and contact information.</p>
+        <a href="about.html" class="btn">Get Started</a>
+    </section>
+
+</body>
+</html>

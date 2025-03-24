@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #1c3b6d;
+            color: white;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 20px; /* Increase padding */
+    font-size: 18px; /* Increase font size */
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar .active {
+    background-color: white;
+    color: black;
+    font-size: 20px; /* Slightly increase font size on hover */
+    padding: 22px; /* Increase padding */
+}
+
+        .sidebar i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .card {
+            border-left: 5px solid #1c3b6d;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-primary {
+            background-color: #00b4d8;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0096c7;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function showDetails(title, domain, tech, summary) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDomain').innerText = domain;
+            document.getElementById('modalTech').innerText = tech;
+            document.getElementById('modalSummary').innerText = summary;
+            var modal = new bootstrap.Modal(document.getElementById('projectModal'));
+            modal.show();
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="about.html"><i class="bi bi-person-circle"></i> About Me</a>
+        <a href="Skills.html"><i class="bi bi-journal-text"></i> Skills</a>
+        <a href="Project.html" class="active"><i class="bi bi-gear"></i> Projects</a>
+        <a href="Contact.html"><i class="bi bi-grid"></i> Contact</a>
+    </div>
+
+    <div class="content">
+        <h2>Projects</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-lightbulb-fill text-primary me-3" style="font-size: 2rem;"></i>
+                        <div>
+                            <h5 class="mb-0">Smart Crop Advisor</h5>
+                            <p class="text-muted">Agriculture & AI</p>
+                            <button class="btn btn-primary btn-sm" onclick="showDetails(
+                                'Smart Crop Advisor',
+                                'Agriculture & AI',
+                                'Flask, Python, Machine Learning',
+                                'A web-based system that recommends crops based on soil and environmental conditions using ML models.'
+                            )">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-droplet-fill text-danger me-3" style="font-size: 2rem;"></i>
+                        <div>
+                            <h5 class="mb-0">Blood Bank Management</h5>
+                            <p class="text-muted">Database System</p>
+                            <button class="btn btn-primary btn-sm" onclick="showDetails(
+                                'Blood Bank Management System',
+                                'Database',
+                                'Xampp, Web Development',
+                                'An automated blood bank management system that efficiently tracks blood availability, donor information, and requests.'
+                            )">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-cart-fill text-success me-3" style="font-size: 2rem;"></i>
+                        <div>
+                            <h5 class="mb-0">Grocery Management System</h5>
+                            <p class="text-muted">Fullstack</p>
+                            <button class="btn btn-primary btn-sm" onclick="showDetails(
+                                'Grocery Management System',
+                                'Fullstack',
+                                'Django, Python, Web Development',
+                                'An automated grocery management system that manages grocery product availability, point-of-sale transactions, and inventory.'
+                            )">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card p-3 mb-3">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-chat-dots-fill text-info me-3" style="font-size: 2rem;"></i>
+                        <div>
+                            <h5 class="mb-0">Simple Chatbot</h5>
+                            <p class="text-muted">Python</p>
+                            <button class="btn btn-primary btn-sm" onclick="showDetails(
+                                'Simple Chatbot',
+                                'AI & Automation',
+                                'Python, NLP',
+                                'A simple chatbot that helps users with daily tasks, similar to a to-do list, making it easy to complete them.'
+                            )">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Bootstrap Modal for Project Details -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Domain:</strong> <span id="modalDomain"></span></p>
+                    <p><strong>Technologies Used:</strong> <span id="modalTech"></span></p>
+                    <p><strong>Summary:</strong> <span id="modalSummary"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

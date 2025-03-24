@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #1c3b6d;
+            color: white;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 20px; /* Increase padding */
+    font-size: 18px; /* Increase font size */
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar .active {
+    background-color: white;
+    color: black;
+    font-size: 20px; /* Slightly increase font size on hover */
+    padding: 22px; /* Increase padding */
+}
+
+        .sidebar i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1c3b6d;
+        }
+    
+    .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #1c3b6d;
+    }
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .profile-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .profile-summary {
+        flex: 1;
+    }
+
+        .education-details {
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+    border: 3px solid #1c3b6d; /* Thick border with color */
+    padding: 10px;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+        .profile-summary {
+    flex: 1;
+}
+
+.profile-summary p {
+    text-align: justify;
+}
+
+    </style>
+    <script>
+        function showEducationDetails() {
+            let selectedValue = document.getElementById("educationSelect").value;
+            document.querySelectorAll(".education-details").forEach(el => el.style.display = "none");
+            document.getElementById("education" + selectedValue).style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="about.html" class="active"><i class="bi bi-person-circle"></i> About Me</a>
+        <a href="Skills.html"><i class="bi bi-journal-text"></i> Skills</a>
+        <a href="Project.html"><i class="bi bi-gear"></i> Projects</a>
+        <a href="Contact.html"><i class="bi bi-grid"></i> Contact</a>
+    </div>
+
+    <div class="content">
+        <h2>About Me</h2>
+        <div class="profile-section">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACUCAMAAABGFyDbAAAAMFBMVEXk5ueutLeor7La3d7n6eqrsbW7wMOxt7rq7O3IzM7Axcfd4OHS1de1ur3Lz9HX2tylgGQwAAADi0lEQVR4nO2b63LjIAyFDYg7tt//bReyaeq2mxjJkezO8nWmtz89cxBCIHWaBoPBYDAYDAaDwWAwGAx+DQDfvzkdCJNZYkqukmIx9ecrUJJStqJuX5TyKU8nexZy8roJ2mL1vJwpDKakvmu6K7PnCQvxiaiG9uspuiC756JupBN0wfrCqrthLourKjuabhGmsqxhUHSHrIqR1AVlbwEfhgmuI6ydXlW8nKzsu1UpO0stY5h7l7Cho4wuWDCqql+riKyMElXxEiVF2EvuP+1a+JcRTP8ufNglkCUcWpWEXQavqu5G7ugKCRtZN1mF2a6Aj6yG41WFOXa2MAc9JJKquoqssij7sGF5K1XMIf1VF+teJIZWXUVOt7Cn9EYWZ5kKpKzVsJyZK8xEVcpyVl2BGvG8W5GY4xsXleX+Q1nUjci8iBcNedRV7IsszgRx0XQKC/lMNHyqrnpU46+uH/AWNhctAy9aNFPu1I2Z+V5NvZAx3xMhkq6v7G/0pMs+8z6caEFvmW+JjYyPLu6Ab+AfR9gfRm5gM71VIn3P7g7GB0IdA+QDuMDL6R1Mu8CJta4xR5DEc+5D19q9jHKipqs27rqarzWuvHgfHfIVm8KN1+neqnjO+AiUlwMHwmG10RWSfzKeMYucg0+F5fjPYZZy9pQNgImzt/o++qOVn6PwmMETYMplicm5lOKymguNcG05W8zUgj5Ur9a1LEusLEspq8m3354kqP7hvC7Jq8dE2d/ZsvbJu1hMFp/IgzCt0c36xybc7EbtXSpZzLZqgYk1XdmOM7F+pFViJA9gTe65Sf+yzTvmLFaje1EdlcNP05JhUwZhTYr47Ga14xkWBChzRzi9sEy9XxiE4uitgjt6jm8WZtwRpz4t8+V9uQym+BZRDe3Mu4rDnrK9G2vfspIwHQ+qb8LeULeCIfdTXgg72mlBP4P0odMxVeQezw5WHQmwd4fVBnqAAUNYfWKpFT96CBAJyS9erxoUv9iifQP+7SuQuhVoXUi7qFNtSLD9PHI7E6sL9VRB7+Bj0Zgl7J7SP4xFzFiSR+0ourrbVLSRV7Ku7rJQZBc+ZHV2OSQS6Za5zyup5PBBX9efPi1Jpeu/D4KwqGpXz9FIaPoepKe0p00UHKMj6IE4RXOEjgInkyde6XTsRdL4xUE6govnYrjD7gjOGRFf2ctc4PQZ7CZUcwYy//w2GAwGg8Ev5A8riSxiV5SA1QAAAABJRU5ErkJggg==" alt="Profile Picture" class="profile-image">
+            <div>
+                <p><strong>Name:</strong> DHANYA VISHNU NAIK</p>
+                <p><strong>Father's Name:</strong> VISHNU TIPPAYYA NAIK</p>
+                <p><strong>Date of Birth:</strong> 29/04/2003</p>
+                <p><strong>Address:</strong> Kadageri, Kharwa, Honnavar, Uttara Kannada, Karnataka, 581-361</p>
+            </div>
+        </div>
+<hr>
+        <div class="profile-summary">
+            <h3>Profile Summary</h3>
+            <p>
+                Enthusiastic and dedicated Information Science and Engineering student at PESITM Shimoga, 
+                with a strong foundation in software development, machine learning, and web technologies. 
+                Passionate about problem-solving and eager to apply my skills to real-world applications. 
+                
+            </p>
+        </div>
+<hr>
+        <h3>Education</h3>
+        <select id="educationSelect" class="form-select w-50" onchange="showEducationDetails()">
+            <option value="" disabled selected>Select Education Level</option>
+            <option value="10th">10<sup>th</sup></option>
+            <option value="PUC">12<sup>th</sup></option>
+            <option value="UG">Undergraduate (UG)</option>
+        </select>
+
+        <div id="education10th" class="education-details mt-3">
+            <h4>10<sup>th</sup> Standard</h4>
+            <table>
+                <tr><th>School Name</th><td>SRI SIDDHIVINAYAK HIGH SCHOOL KHARWA</td></tr>
+                <tr><th>Board Name</th><td>Karnataka Secondary Education Examination Board</td></tr>
+                <tr><th>Percentage</th><td>88.48%</td></tr>
+                <tr><th>Passout Year</th><td>2019</td></tr>
+            </table>
+        </div>
+
+        <div id="educationPUC" class="education-details mt-3">
+            <h4>12<sup>th</sup> (PUC)</h4>
+            <table>
+                <tr><th>College Name</th><td>GOVT MOHAN K SHETTY PU COLLEGE, PRABHATNAGAR</td></tr>
+                <tr><th>Board Name</th><td>Karnataka Pre-University Education</td></tr>
+                <tr><th>Specialization</th><td>PCMB</td></tr>
+                <tr><th>Percentage</th><td>90.5%</td></tr>
+                <tr><th>Passout Year</th><td>2021</td></tr>
+            </table>
+        </div>
+
+        <div id="educationUG" class="education-details mt-3">
+            <h4>Undergraduate (UG)</h4>
+            <table>
+                <tr><th>University Name</th><td>VTU Belagavi</td></tr>
+                <tr><th>College Name</th><td>PESITM SHIMOGA</td></tr>
+                <tr><th>Degree</th><td>Bachelor of Engineering</td></tr>
+                <tr><th>Specialization</th><td>Information Science and Engineering</td></tr>
+                <tr><th>Percentage</th><td>82%</td></tr>
+                <tr><th>Passout Year</th><td>2025</td></tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

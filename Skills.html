@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Certificates</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #1c3b6d;
+            color: white;
+            position: fixed;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .sidebar a:hover, .sidebar .active {
+            background-color: white;
+            color: black;
+            font-size: 20px;
+            padding: 22px;
+        }
+        .sidebar i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .certificate-details {
+            display: none;
+            margin-top: 15px;
+        }
+        .certificate-image {
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid #1c3b6d;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function showCertificateDetails() {
+            let selectedValue = document.getElementById("certificateSelect").value;
+            document.querySelectorAll(".certificate-details").forEach(el => el.style.display = "none");
+            if (selectedValue) {
+                document.getElementById("cert" + selectedValue).style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="about.html"><i class="bi bi-person-circle"></i> About Me</a>
+        <a href="Skills.html" class="active"><i class="bi bi-journal-text"></i> Skills</a>
+        <a href="Project.html"><i class="bi bi-gear"></i> Projects</a>
+        <a href="Contact.html"><i class="bi bi-grid"></i> Contact</a>
+    </div>
+
+    <div class="content">
+        <h2>Skills & Certificates</h2><br>
+        
+        <h3>Technical Skills</h3>
+        <ul class="list-group w-50">
+            <li class="list-group-item"><i class="bi bi-code-slash"></i> Programming Languages: Python, Java, C</li>
+            <li class="list-group-item"><i class="bi bi-globe"></i> Web Development: HTML, CSS, JavaScript</li>
+            <li class="list-group-item"><i class="bi bi-database"></i> Database Management: MySQL</li>
+        </ul>
+<hr>
+        <h3>Soft Skills</h3>
+        <ul class="list-group w-50">
+            <li class="list-group-item"><i class="bi bi-lightbulb"></i> Problem Solving</li>
+            <li class="list-group-item"><i class="bi bi-people"></i> Teamwork & Collaboration</li>
+            <li class="list-group-item"><i class="bi bi-chat-left-text"></i> Communication</li>
+            <li class="list-group-item"><i class="bi bi-clock"></i> Time Management</li>
+        </ul>
+<hr>
+  
+
+        <h3>Certificates</h3>
+        <select id="certificateSelect" class="form-select w-50" onchange="showCertificateDetails()">
+            <option value="" disabled selected>Select a Certificate</option>
+            <option value="Java">Java Certification</option>
+            <option value="Python">Foundation of Cybersecurity</option>
+           
+        </select>
+
+        <div id="certJava" class="certificate-details">
+            <h4>Java Certification</h4>
+            <p><strong>Issuing Company:</strong> Elewyte</p>
+            <p><strong>Issuing Date:</strong> jul 2024</p>
+            <img src="C:\Users\Engineer's Choice\Pictures\Screenshots\Screenshot 2025-03-06 113953.png" alt="Java Certificate" class="certificate-image">
+        </div>
+
+        <div id="certPython" class="certificate-details">
+            <h4>Foundation of Cybersecurity</h4>
+            <p><strong>Issuing Company:</strong> Coursera</p>
+            <p><strong>Issuing Date:</strong> Jan 2024</p>
+            <img src="C:\Users\Engineer's Choice\Pictures\Screenshots\Screenshot 2025-03-06 114016.png" alt="Python Certificate" class="certificate-image">
+        </div>
+
+    </div>
+</body>
+</html>
